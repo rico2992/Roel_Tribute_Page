@@ -1,0 +1,232 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Shadows Into Light', cursive;
+    background-color: #f2f2f2; /* White Smoke */
+    color: #595959; /* Davy's Gray */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Limit the width of content */
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    background: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #595959; /* Davy's Gray */
+    padding: 8px 16px;
+}
+
+/* Hover effect for all links */
+.nav-links a:hover {
+    color: #EF8354; /* Atomic Tangerine: Hover effect */
+    transition: all 0.3s ease;
+}
+
+.nav-links a.btn {
+    border: 2px solid #595959; /* Davy's Gray */
+    background: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.nav-links a.btn:hover {
+    border-color: #EF8354; /* Atomic Tangerine: Hover effect */
+    color: #EF8354; /* Atomic Tangerine: Hover effect */
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 30px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    letter-spacing: 15px;
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
+    position: relative;
+}
+
+.slide img {
+    border-radius: 10px;
+    object-fit: contain;
+    border: 2px solid #595959; /* Davy's Gray */
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 50px
+}
+
+.next {
+    right: 50px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lightbox Navigation */
+.prev-lightbox, .next-lightbox {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.prev-lightbox {
+    left: 50px;
+}
+
+.next-lightbox {
+    right: 50px;
+}
+/* Smartphones (Portrait) */
+@media only screen and (max-width: 480px) {
+    .slide img {
+        width: 100%; /* Make the image wider on smaller screens */
+        height: auto;
+        object-fit: contain; /* Ensure no cropping */
+    }
+}
+
+/* Tablets (Portrait) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* Larger screens (Desktops and Tablets in Landscape) */
+@media only screen and (min-width: 769px) {
+    .slide img {
+        width: auto;
+        height: 90vh;
+    }
+}
