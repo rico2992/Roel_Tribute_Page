@@ -1,3 +1,5 @@
+"use strict";
+
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const lightbox = document.getElementById('lightbox');
@@ -24,6 +26,9 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
+// Change slide every 3 seconds
+setInterval(nextSlide, 3000);
+
 // Lightbox functionality
 document.querySelectorAll('.slide img').forEach((img, index) => {
     img.addEventListener('click', () => {
@@ -32,9 +37,12 @@ document.querySelectorAll('.slide img').forEach((img, index) => {
 });
 
 function openLightbox(index) {
-    currentSlide = index;
-    lightbox.style.display = 'block';  // Show the lightbox
-    showSlideLightbox(currentSlide);
+    // Prevent lightbox from opening on screens smaller than 768px
+    if (window.innerWidth > 768) {
+        currentSlide = index;
+        lightbox.style.display = 'block';  // Show the lightbox
+        showSlideLightbox(currentSlide);
+    }
 }
 
 function closeLightbox() {
@@ -63,6 +71,14 @@ lightbox.addEventListener('click', function (event) {
     }
 });
 
+// Toggle function for Hamburger menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    
+    navLinks.classList.toggle('active'); // Toggles the "active" class showing/hiding the menu
+    hamburger.classList.toggle('active'); // Toggles the "active" class changing the hamburger icon
+}
 
-// Change slide every 3 seconds
-setInterval(nextSlide, 3000);
+// Event listener for Hamburger menu
+document.querySelector('.hamburger').addEventListener('click', toggleMenu);
