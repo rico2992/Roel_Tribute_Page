@@ -189,66 +189,6 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-y: auto;
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 800px;
-    height: auto;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Lightbox Navigation */
-.prev-lightbox, .next-lightbox {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: 0.6s ease;
-    user-select: none;
-}
-
-.prev-lightbox {
-    left: 50px;
-}
-
-.next-lightbox {
-    right: 50px;
-}
 /* Smartphones (Portrait) */
 @media only screen and (max-width: 480px) {
     .nav-links {
@@ -290,33 +230,6 @@ body {
         width: 30px;
         height: 30px;
         font-size: 18px; /* Smaller arrows */
-    }
-
-    .prev-lightbox, .next-lightbox {
-        width: 30px;
-        height: 30px;
-        font-size: 18px; /* Smaller lightbox arrows */
-    }
-
-    /* Lightbox for mobile devices */
-    .lightbox-content {
-        width: 100%;
-        height: auto;
-    }
-
-    .prev-lightbox, .next-lightbox {
-        font-size: 16px; /*Smaller navigation buttons */
-    }
-
-    .close {
-        top: 10px;
-        right: 15px;
-        font-size: 28px; /* Smaller close button */
-    }
-
-    /* Hide the lightbox on mobile */
-    .lightbox {
-        display: none !important;
     }
 }
 
@@ -363,32 +276,6 @@ body {
         height: 35px;
         font-size: 20px; /* Adjust arrow size for tablets */
     }
-
-    .prev-lightbox, .next-lightbox {
-        width: 35px;
-        height: 35px;
-        font-size: 20px; /* Adjust lightbox arrow size for tablets */
-    }
-
-    /* Lightbox for tablet devices */
-    .lightbox-content {
-        width: 100%;
-    }
-
-    .prev-lightbox, .next-lightbox {
-        font-size: 18px; /* Smaller navigation buttons */
-    }
-
-    .close {
-        top: 10px;
-        right: 20px;
-        font-size: 30px; /* Smaller close button */
-    }
-
-    /* Hide the lightbox on tablets */
-    .lightbox {
-        display: none !important;
-    }
 }
 
 /* Larger screens (Desktops and Tablets in Landscape) */
@@ -405,21 +292,5 @@ body {
     
     .next {
             right: 50px; /* Reset for larger screens */
-    }
-
-    /* Lightbox for larger screens */
-    .lightbox-content {
-        width: 90%;
-        max-width: 1000px;
-    }
-
-    .close {
-        top: 20px;
-        right: 45px;
-        font-size: 40px;
-    }
-
-    .prev-lightbox, .next-lightbox {
-        font-size: 24px;
     }
 }

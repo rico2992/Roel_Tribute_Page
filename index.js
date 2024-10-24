@@ -29,48 +29,6 @@ function prevSlide() {
 // Change slide every 3 seconds
 setInterval(nextSlide, 3000);
 
-// Lightbox functionality
-document.querySelectorAll('.slide img').forEach((img, index) => {
-    img.addEventListener('click', () => {
-        openLightbox(index);
-    });
-});
-
-function openLightbox(index) {
-    // Prevent lightbox from opening on screens smaller than 768px
-    if (window.innerWidth > 768) {
-        currentSlide = index;
-        lightbox.style.display = 'block';  // Show the lightbox
-        showSlideLightbox(currentSlide);
-    }
-}
-
-function closeLightbox() {
-    lightbox.style.display = 'none';  // Hide the lightbox
-}
-
-function showSlideLightbox(index) {
-    const imgSrc = slides[index].querySelector('img').src;
-    lightboxImg.src = imgSrc;
-}
-
-function nextSlideLightbox() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlideLightbox(currentSlide);
-}
-
-function prevSlideLightbox() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlideLightbox(currentSlide);
-}
-
-// Close lightbox on outside click (optional)
-lightbox.addEventListener('click', function (event) {
-    if (event.target === lightbox) {
-        closeLightbox();
-    }
-});
-
 // Toggle function for Hamburger menu
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
